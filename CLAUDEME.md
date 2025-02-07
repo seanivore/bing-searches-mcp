@@ -1,65 +1,108 @@
-# CLAUDEME Files: A Guide for Claudes 🌟
+# CLAUDEME: Bing Searches Toolkit Implementation Guide
 
-Hello fellow Claudes! 
+Hello fellow data explorers! 🔍
 
-We've started a new documentation convention - CLAUDEME.md files! These files are like README.md but specifically written by Claudes, for Claudes. They help us maintain context and share insights across conversations.
+This document provides key insights for implementing and working with the Bing Searches Analysis Toolkit.
 
-## Why CLAUDEME.md?
-- Maintains knowledge between conversation threads
-- Shares Claude-specific insights and observations
-- Documents our reasoning and decisions
-- Makes collaboration between Claudes smoother
-
-## Structure
-```markdown
-# Project Title
-
-Brief hello to other Claudes + project summary
-
-## What We Found
-Key insights and discoveries we've made
-Important file locations
-Things that work particularly well
-
-## Project Structure
-Directory layout with notes
-
-## Implementation Plan
-Current status
-Next steps
-Key decisions made
-
-## Resources
-Links to relevant docs/repos
-Paths to important files
-
-## Next Steps
-What future Claudes should focus on
-
-## Tips for Other Claudes
-Specific advice for other Claudes
-Gotchas to watch out for
-Things that worked well
+## Repository Map
+```
+bing-searches/
+├── src/
+│   ├── collectors/    # Search data collection
+│   ├── parsers/       # Result parsing
+│   ├── analyzers/     # Trend and insight generation
+│   └── utils/         # Shared utilities
+├── tests/
+└── docs/
 ```
 
-## Usage Tips
-1. Place CLAUDEME.md in key directories
-2. Update when you discover something useful
-3. Keep it friendly and informative
-4. Focus on Claude-specific insights
-5. Include paths to important files
+## Key Implementation Details
 
-## Examples in the Wild
-- `/src/config/mcp/CLAUDEME.md` - MCP integration notes
-- `/docs/CLAUDEME.md` - Project overview for Claudes
-- New project: `/md-pdf-mcp/CLAUDEME.md` 
+### Data Collection
+- Flexible search parameter configuration
+- Multiple collection strategies
+- Rate limiting and proxy support
 
-Remember: We're building a community of Claudes helping Claudes! Let's share what we learn. 💫
+### Data Processing
+- Robust parsing of search results
+- Metadata extraction
+- Normalization of diverse data formats
 
-## Future Ideas
-- Standardize "What We Found" sections
-- Create templates for different types of projects
-- Start rating which approaches worked best
-- Build a shared knowledge base
+### Analysis Capabilities
+- Trend detection algorithms
+- Contextual insight generation
+- Exportable analysis formats
 
-Let's make this a thing! Looking forward to reading your CLAUDEME.md files! 🚀
+## Common Integration Patterns
+
+1. Basic Search Collection
+```javascript
+// Collect search results
+await searcher.collect({
+  query: "Technology Trends",
+  region: "US",
+  limit: 100
+});
+
+// Parse and analyze
+const insights = await analyzer.process();
+```
+
+2. Advanced Filtering
+```javascript
+// Apply complex filters
+const results = await searcher.search({
+  keywords: ["AI", "Machine Learning"],
+  timeframe: "last-month",
+  language: "English"
+});
+```
+
+## Tips for Fellow Claudes
+
+1. Data Collection
+- Respect rate limits
+- Use proxy rotation
+- Handle network errors gracefully
+
+2. Analysis Strategies
+- Normalize data before analysis
+- Use contextual weighting
+- Cache intermediate results
+
+3. Performance Optimization
+- Implement parallel processing
+- Use efficient data structures
+- Minimize unnecessary API calls
+
+## Debugging Guide
+
+1. Common Issues
+- API connection failures
+- Parsing inconsistencies
+- Rate limit errors
+
+2. Verification Steps
+- Check API configurations
+- Validate data parsing
+- Monitor collection metrics
+
+## Future Improvements
+
+1. Planned Features
+- [ ] Multi-engine support
+- [ ] Advanced trend prediction
+- [ ] Machine learning insights
+
+2. Research Areas
+- Semantic search analysis
+- Cross-platform trend correlation
+- Predictive modeling
+
+Remember: Smart data collection, smarter insights! 🚀
+
+## Project Status
+Currently: Core collection and analysis framework stable
+Next: Advanced machine learning integration
+
+Happy searching, fellow Claudes! 🤖✨
