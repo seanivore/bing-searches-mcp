@@ -1,0 +1,27 @@
+# Ignore all subdirectories (where individual projects live)
+*/
+
+# Standard ignores
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+.env
+
+# IDE/Editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Aider cache files
+.aider.tags.cache.v3
+
+# Make sure we don't accidentally commit any actual project files
+# that might end up in the root temporarily
+*.log
+*.lock
+node_modules/ 
